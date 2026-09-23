@@ -34,3 +34,4 @@ public class BulbAdapter implements SmartDevice {
         return power;
     }
 }
+//unfinished bulb adapter
