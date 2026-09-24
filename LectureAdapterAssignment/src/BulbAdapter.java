@@ -29,9 +29,23 @@ public class BulbAdapter implements SmartDevice {
 
     @Override
     public int getPowerPercent(){
+
+        if(bulb.readBrightness()==0 ){
+            return 0;
+        }
+
+        if (bulb.hasPower()==false){
+            return 0;
+        }
+
         int power = 0 ;
+
         power = ((bulb.readBrightness()*100)/255);
+        power+=9;
+
+        if(power>100){
+            power=100;
+        }
         return power;
     }
 }
-//unfinished bulb adapter
